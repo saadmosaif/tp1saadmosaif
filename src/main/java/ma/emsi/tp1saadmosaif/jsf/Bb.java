@@ -209,7 +209,7 @@ public class Bb implements Serializable {
                 If the user type an English text, you translate it into French.
                 If the text contains only one to three words, give some examples of usage of these words in English.
                 """;
-        // 1er argument : la valeur du rôle, 2ème argument : le libellé du rôle
+        //le 1er argument : la valeur du rôle, 2ème argument : le libellé du rôle
         listeSystemRoles.add(new SelectItem(role, "Traducteur Anglais-Français"));
         role = """
                 Your are a travel guide. If the user type the name of a country or of a town,
