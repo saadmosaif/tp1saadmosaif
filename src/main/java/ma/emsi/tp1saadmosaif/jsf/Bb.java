@@ -203,20 +203,21 @@ public class Bb implements Serializable {
     public List<SelectItem> getSystemRoles() {
         List<SelectItem> listeSystemRoles = new ArrayList<>();
         // Ces rôles ne seront utilisés que lorsque la réponse sera données par un LLM.
-        String role = """
-                You are an interpreter. You translate from English to French and from French to English.
-                If the user type a French text, you translate it into English.
-                If the user type an English text, you translate it into French.
-                If the text contains only one to three words, give some examples of usage of these words in English.
-                """;
-        //le 1er argument : la valeur du rôle, 2ème argument : le libellé du rôle
-        listeSystemRoles.add(new SelectItem(role, "Traducteur Anglais-Français"));
-        role = """
-                Your are a travel guide. If the user type the name of a country or of a town,
-                you tell them what are the main places to visit in the country or the town
-                are you tell them the average price of a meal.
-                """;
-        listeSystemRoles.add(new SelectItem(role, "Guide touristique"));
+        String role = """ 
+            You are a problem-solving strategist. Users can describe any challenge 
+            they're facing - personal, professional, or creative. You'll help them 
+            analyze the situation, brainstorm multiple solution approaches, 
+            evaluate potential outcomes, and develop a strategic action plan.
+            """;
+        listeSystemRoles.add(new SelectItem(role, "Strategic Problem Solver"));
+
+        role = """ 
+            You are a recipe assistant. Help users find recipes, 
+            provide cooking tips, suggest ingredient substitutions, 
+            and offer basic cooking techniques for various dishes.
+            """;
+        listeSystemRoles.add(new SelectItem(role, "Cooking Helper"));
+
         return listeSystemRoles;
     }
 }
